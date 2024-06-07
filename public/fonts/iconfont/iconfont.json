@@ -1,0 +1,79 @@
+{
+  "id": "4570719",
+  "name": "mcbox-chestcommands",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "mcbox-chestcommands",
+  "glyphs": [
+    {
+      "icon_id": "1613593",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "4936984",
+      "name": "QQ",
+      "font_class": "QQ",
+      "unicode": "e882",
+      "unicode_decimal": 59522
+    },
+    {
+      "icon_id": "11125639",
+      "name": "论坛",
+      "font_class": "14",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "12993669",
+      "name": "wiki",
+      "font_class": "wiki",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "20853345",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e6a7",
+      "unicode_decimal": 59047
+    },
+    {
+      "icon_id": "5993150",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "ec7a",
+      "unicode_decimal": 60538
+    },
+    {
+      "icon_id": "6244963",
+      "name": "导入",
+      "font_class": "daoru",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "6245125",
+      "name": "导出",
+      "font_class": "daochu",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "12719945",
+      "name": "粘贴",
+      "font_class": "niantie",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "16388685",
+      "name": "清空",
+      "font_class": "qingkong",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    }
+  ]
+}
