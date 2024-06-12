@@ -243,15 +243,19 @@ export default {
   },
   computed: {
     menusdata() {
-      return this.$store.state.menu;
+      return this.$store.state.menu["menu-settings"];
     },
     menu_name() {
       return this.$store.state.menu_file;
     },
   },
   watch: {
-    menusdata(newVal) {
-      this["menu-settings"] = newVal["menu-settings"];
+    menusdata: {
+      handler(newVal) {
+        this["menu-settings"] = newVal;
+      },
+      deep: true,
+      immediate: true,
     },
     menu_name(newVal) {
       this.menufile = newVal;

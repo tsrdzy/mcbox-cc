@@ -83,16 +83,49 @@ export default createStore({
     },
     upfile(state, files) {
       const yaml = require("js-yaml");
-      const files_json = yaml.load(files, "utf-8")
+
       state.menu = {
         "menu-settings": {
-          name: "&bMCBOX &c&lChestCommands &dEditor", rows: 6, "auto-refresh": null,
-          commands: [], "open-with-item": {
+          name: "", rows: 6, "auto-refresh": null, commands: [], "open-with-item": {
             material: "", "left-click": false, "right-click": false,
           },
         }
       }
+      const files_json = yaml.load(files, "utf-8")
+
       state.menu = files_json
+      state.menu["menu-settings"].rows = files_json["menu-settings"].rows
+      state.menu["menu-settings"].name = files_json["menu-settings"].name
+      if (files_json["menu-settings"]["auto-refresh"] != undefined && files_json["menu-settings"]["auto-refresh"] != null && files_json["menu-settings"]["auto-refresh"] != "") {
+        state.menu["menu-settings"]["auto-refresh"] = files_json["menu-settings"]["auto-refresh"]
+      } else {
+        state.menu["menu-settings"]["auto-refresh"] = null
+      }
+      if (files_json["menu-settings"].commands != "" && files_json["menu-settings"].commands != undefined && files_json["menu-settings"].commands != null) {
+        state.menu["menu-settings"].commands = files_json["menu-settings"].commands
+      } else {
+        state.menu["menu-settings"].commands = []
+      }
+      if (files_json["menu-settings"]["open-with-item"] != undefined && files_json["menu-settings"]["open-with-item"] != null && files_json["menu-settings"]["open-with-item"] != "") {
+        if (files_json["menu-settings"]["open-with-item"].material != undefined && files_json["menu-settings"]["open-with-item"].material != null) {
+          state.menu["menu-settings"]["open-with-item"].material = files_json["menu-settings"]["open-with-item"].material
+        } else {
+          state.menu["menu-settings"]["open-with-item"].material = ""
+        }
+        if (files_json["menu-settings"]["open-with-item"]["left-click"] != undefined && files_json["menu-settings"]["open-with-item"]["left-click"] != null) {
+          state.menu["menu-settings"]["open-with-item"]["left-click"] = files_json["menu-settings"]["open-with-item"]["left-click"]
+        } else {
+          state.menu["menu-settings"]["open-with-item"]["left-click"] = false
+        }
+        if (files_json["menu-settings"]["open-with-item"]["right-click"] != undefined && files_json["menu-settings"]["open-with-item"]["right-click"] != null) {
+          state.menu["menu-settings"]["open-with-item"]["right-click"] = files_json["menu-settings"]["open-with-item"]["right-click"]
+        } else {
+          state.menu["menu-settings"]["open-with-item"]["left-click"] = false
+        }
+      } else {
+        state.menu["menu-settings"]["open-with-item"] = { material: "", "left-click": false, "right-click": false, }
+      }
+
 
     },
     menu_file(state, filename) {

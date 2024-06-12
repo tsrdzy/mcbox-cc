@@ -1,0 +1,12 @@
+{
+  "name": "mcbox-chestcommands",
+  "uuid": "97a79021-43cc-4f4e-a2f4-76ed7af27c04",
+  "icon":"logo.png",
+  "debug": {
+    "entry": "http://localhost:8080",
+    "resource": "public"
+  },
+  "build": {
+    "resource": "dist"
+  }
+}

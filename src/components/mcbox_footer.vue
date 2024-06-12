@@ -109,6 +109,7 @@ h2 {
     height: 30px;
     line-height: 30px;
     color: rgb(30, 30, 30);
+
   }
 }
 

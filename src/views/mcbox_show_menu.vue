@@ -156,16 +156,23 @@ export default {
   methods: {
     filechange() {
       var $this = this;
+      this.size = 6;
       var file_return = "";
       var selectedFile = document.getElementById("upfile").files[0];
       var menuname = selectedFile.name;
       menuname = menuname.replace(".yml", "");
       menuname = menuname.replace(".yaml", "");
+
       this.$store.commit("menu_file", menuname);
 
       var reader = new FileReader();
       reader.readAsText(selectedFile);
       reader.onload = function () {
+        for (var v = 1; v <= 6; v++) {
+          for (var g = 1; g <= 9; g++) {
+            $this.menus[g + "*" + v] = [null, undefined, undefined, null];
+          }
+        }
         file_return = JSON.parse(JSON.stringify(this.result));
         $this.$store.commit("upfile", file_return);
       };
@@ -266,6 +273,7 @@ export default {
     menusdata: {
       handler(newVal) {
         var newVal1 = JSON.parse(JSON.stringify(newVal));
+        this.size = newVal1["menu-settings"].rows;
         delete newVal1["menu-settings"];
         for (let keys in newVal1) {
           var xx = JSON.parse(JSON.stringify(newVal1[keys]["POSITION-X"]));

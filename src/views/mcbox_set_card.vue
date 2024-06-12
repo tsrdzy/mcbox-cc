@@ -356,7 +356,7 @@ export default {
         PRICE: null,
         LEVELS: null,
         "REQUIRED-ITEMS": "",
-        "KEEP-OPEN": null,
+        "KEEP-OPEN": "",
         PERMISSION: "",
         "VIEW-PERMISSION": "",
         "PERMISSION-MESSAGE": "",
@@ -456,7 +456,7 @@ export default {
         }
         if (
           this.temporary["KEEP-OPEN"] != "" &&
-          this.temporary.LEVELS != null
+          this.temporary["KEEP-OPEN"] != null
         ) {
           this.item_cards["KEEP-OPEN"] = this.temporary["KEEP-OPEN"];
         }
@@ -564,7 +564,7 @@ export default {
         PRICE: null,
         LEVELS: null,
         "REQUIRED-ITEMS": "",
-        "KEEP-OPEN": null,
+        "KEEP-OPEN": "",
         PERMISSION: "",
         "VIEW-PERMISSION": "",
         "PERMISSION-MESSAGE": "",
